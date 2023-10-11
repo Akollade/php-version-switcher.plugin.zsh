@@ -3,7 +3,7 @@ if [[ -n "${PHP_PATH_TEMPLATE}" ]]; then
     php_path_template=${PHP_PATH_TEMPLATE}
 fi
 
-ispv_load_php_version() {
+pvs_load_php_version() {
     # Current php version without patch version
     local php_current_version=$(php -r "echo PHP_VERSION;" | cut -d'.' -f 1,2)
 
@@ -28,7 +28,7 @@ ispv_load_php_version() {
 
 
 # Functions to find .php-version file
-ispv_find_php_version() {
+pvs_find_php_version() {
   local dir
   dir="$(ispv_find_up '.php-version')"
   if [ -e "${dir}/.php-version" ]; then
@@ -36,7 +36,7 @@ ispv_find_php_version() {
   fi
 }
 
-ispv_find_up() {
+pvs_find_up() {
   local path_
   path_="${PWD}"
   while [ "${path_}" != "" ] && [ ! -f "${path_}/${1-}" ]; do
@@ -49,6 +49,6 @@ ispv_find_up() {
 autoload -U add-zsh-hook
 
 # Add the above function when the present working directory (pwd) changes
-add-zsh-hook chpwd ispv_load_php_version
+add-zsh-hook chpwd pvs_load_php_version
 
-ispv_load_php_version
+pvs_load_php_version
