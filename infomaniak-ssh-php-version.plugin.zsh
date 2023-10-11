@@ -1,3 +1,8 @@
+php_path_template=/opt/php__PHP_VERSION__/bin
+if [[ -n "${PHP_PATH_TEMPLATE}" ]]; then
+    php_path_template=${PHP_PATH_TEMPLATE}
+fi
+
 ispv_load_php_version() {
     # Current php version without patch version
     local php_current_version=$(php -r "echo PHP_VERSION;" | cut -d'.' -f 1,2)
@@ -16,7 +21,8 @@ ispv_load_php_version() {
     if [ "$php_version" != "$php_current_version" ]; then
         # switch php versions
         echo "Using PHP: $php_version"
-        export PATH=/opt/php$php_version/bin:$PATH
+        php_path="${php_path_template/__PHP_VERSION__/"$php_version"}"
+        export PATH=$php_path:$PATH
     fi
 }
 
