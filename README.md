@@ -1,19 +1,19 @@
-# infomaniak-ssh-php-version.plugin.zsh
+# php-version-switcher.plugin.zsh
 
-This is an [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) plugin to switch PHP version from .php-version in Infomaniak SSH.
+This is an [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) plugin to switch PHP version from .php-version.
 
 # Install
 
 ```
 cd ~/.oh-my-zsh/custom/plugins
-git clone https://github.com/Akollade/infomaniak-ssh-php-version.plugin.zsh infomaniak-ssh-php-version
+git clone https://github.com/Akollade/php-version-switcher.plugin.zsh php-version-switcher
 ```
 
 Edit `~/.zshrc` to enable the plugin and set the PHP path template:
 
 ```
 PHP_PATH_TEMPLATE="/opt/php__PHP_VERSION__/bin"
-plugins=(... infomaniak-ssh-php-version)
+plugins=(... php-version-switcher)
 ```
 
 Example for `PHP_PATH_TEMPLATE`:
