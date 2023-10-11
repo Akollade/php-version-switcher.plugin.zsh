@@ -9,11 +9,17 @@ cd ~/.oh-my-zsh/custom/plugins
 git clone https://github.com/Akollade/infomaniak-ssh-php-version.plugin.zsh infomaniak-ssh-php-version
 ```
 
-Edit `~/.zshrc` to enable the plugin:
+Edit `~/.zshrc` to enable the plugin and set the PHP path template:
 
 ```
+PHP_PATH_TEMPLATE="/opt/php__PHP_VERSION__/bin"
 plugins=(... infomaniak-ssh-php-version)
 ```
+
+Example for `PHP_PATH_TEMPLATE`:
+
+* Infomaniak : `PHP_PATH_TEMPLATE="/opt/php__PHP_VERSION__/bin"`
+* Homebrew : `PHP_PATH_TEMPLATE="$(brew --prefix)/opt/php@__PHP_VERSION__/bin"`
 
 # Inspired by
 
