@@ -8,7 +8,7 @@ pvs_load_php_version() {
     local php_current_version=$(php -r "echo PHP_VERSION;" | cut -d'.' -f 1,2)
 
     # Path to the .php-version file
-    local php_version_path="$(ispv_find_php_version)"
+    local php_version_path="$(pvs_find_php_version)"
 
     # Check if there exists a .php-version file
     if [ -f "$php_version_path" ]; then
