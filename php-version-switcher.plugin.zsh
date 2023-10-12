@@ -30,7 +30,7 @@ pvs_load_php_version() {
 # Functions to find .php-version file
 pvs_find_php_version() {
   local dir
-  dir="$(ispv_find_up '.php-version')"
+  dir="$(pvs_find_up '.php-version')"
   if [ -e "${dir}/.php-version" ]; then
     echo "${dir}/.php-version"
   fi
